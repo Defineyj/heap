@@ -1,4 +1,5 @@
 #include "Heap.h"
+#include "ShellSort.h"
 
 int main()
 {
@@ -14,5 +15,14 @@ int main()
 	h.print();
 	h.removeMin();
 	h.print();
+
+	const unsigned numEle = 8;
+	int data[numEle] = { 1,5,7,3,8,2,6,4 };
+	vector<int> testData;
+	for (unsigned i = 0; i < numEle; ++i) testData.push_back(data[i]);
+
+	ShellSort<int> test(testData, numEle);
+	test.shellSort();
+	test.out();
 	return 0;
 }
