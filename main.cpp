@@ -1,5 +1,6 @@
 #include "Heap.h"
 #include "ShellSort.h"
+#include "HeapSort.h"
 
 int main()
 {
@@ -24,5 +25,12 @@ int main()
 	ShellSort<int> test(testData, numEle);
 	test.shellSort();
 	test.out();
+
+	int A[] = { 1,5,7,3,8,2,6,4 };
+	HeapSort* H = new HeapSort();
+	auto a = H->heapSort(A, sizeof(A) / sizeof(A[0]));
+	for (int i = 0; i < sizeof(A) / sizeof(A[0]); ++i)
+		cout << A[i] << ' ';
+	cout << endl;
 	return 0;
 }

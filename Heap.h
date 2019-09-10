@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#define DefaultSize  10
+const int DefaultSize = 10;
 
 template <typename T>
 class MinHeap
@@ -63,8 +63,10 @@ MinHeap<T>::MinHeap(T arr[], const int n)
 		heap[i] = arr[i];	
 
 	print();
-
-	int currentPos = (currentSize - 2) / 2;
+	//堆顶元素的标号为0
+	//根节点为i其左孩子为2i + 1，右孩子2i+2
+	//currentSize为最后一个元素的位置加一
+	int currentPos = (currentSize - 2) / 2;//currentPos为最后一个元素的根节点
 	while (currentPos >= 0)
 	{
 		shiftDown(currentPos, currentSize - 1);
@@ -92,14 +94,15 @@ void MinHeap<T>::shiftDown(int start, int m)
 			break;//如果两个孩子中最小的那个大于父节点，则不做交换		
 		else
 		{
-			heap[i] = heap[j];//否则，交换父节点和子节点
+			std::swap(heap[i], heap[j]);
+			//heap[i] = heap[j];//否则，交换父节点和子节点
 			i = j;//继续向下比较，当前的子节点作为下一次的父节点
 			j = 2 * i + 1;
 		}
 		
 	
 	}
-	heap[i] = temp;
+	//heap[i] = temp;
 }
 
 //新节点从最后插入，所以要从下向上比较，从start开始，一直到0
@@ -115,11 +118,12 @@ void MinHeap<T>::shiftUp(int start)
 			break;
 		else
 		{
-			heap[j] = heap[i];
+			std::swap(heap[i], heap[j]);
+			//heap[j] = heap[i];
 			j = i;
 			i = (j - 1) / 2;
 		}
-		heap[j] = temp;//因为父节点大于子节点，所以之前父节点的值赋给现在子节点，之前子节点的值也要赋值给现在的父节点
+		//heap[j] = temp;//因为父节点大于子节点，所以之前父节点的值赋给现在子节点，之前子节点的值也要赋值给现在的父节点
 	}
 }
 
