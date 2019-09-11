@@ -20,6 +20,7 @@ public:
 	}
 	void Heap(int *A, int n)
 	{
+		//这里堆顶下标从0开始
 		int index = n / 2 - 1;
 		for (; index >= 0; index--)
 		{

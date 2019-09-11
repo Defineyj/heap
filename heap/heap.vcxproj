@@ -120,7 +120,7 @@
   <ItemGroup>
     <ClInclude Include="..\Heap.h" />
     <ClInclude Include="..\HeapSort.h" />
-    <ClInclude Include="ShellSort.h" />
+    <ClInclude Include="..\ShellSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

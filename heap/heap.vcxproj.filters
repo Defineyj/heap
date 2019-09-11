@@ -23,10 +23,10 @@
     <ClInclude Include="..\Heap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ShellSort.h">
+    <ClInclude Include="..\HeapSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\HeapSort.h">
+    <ClInclude Include="..\ShellSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
